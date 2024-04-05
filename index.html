@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Digital Drum Kit</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js" integrity="sha512-GWzVrcGlo0TxTRvz9ttioyYJ+Wwk9Ck0G81D+eO63BaqHaJ3YZX9wuqjwgfcV/MrB2PhaVX9DkYVhbFpStnqpQ==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</head>
+<body>
+    
+
+    <h1>Where words fall,Music speaks</h1>
+    <div class="all">
+        <button class="w button">w</button>
+        <button class="a button">a</button>
+        <button class="d button">d</button>
+        <button class="j button">j</button>
+        <button class="k button">k</button>
+        <button class="l button">l</button>
+    </div>
+
+<script>
+    var numberOfButttons =
+              document.querySelectorAll(".button").length;
+              for(var j = 0; j < numberOfButtons; j++) {
+                document.querySelectorAll(".button")[j]
+                .addEventListener("click", function() {
+
+                    var buttonStyle = this.innerHTML;
+                    sound(buttonStyle);
+                    animation(buttonStyle);
+
+                });
+              }
+
+              document.addEventListener("keypress", function(event) {
+                sound(event.key);
+                animation(event.key);
+              });
+
+    function sound(key) {
+        switch (key) {
+            case "w":
+                var sound1 = new Audio("music/w.mp3");
+                sound1.play();
+                break;
+
+
+                case "a":
+                var sound2 = new Audio ("music/a.mp3");
+                sound2.play();
+                break;
+
+
+                case "s":
+                var sound3 = new Audio ("music/s.mp3");
+                sound3.play();
+                break;
+
+
+                case "d":
+                var sound3 = new Audio ("music/d.mp3");
+                sound3.play();
+                break;
+                
+
+                case "j":
+                var sound4 = new Audio ("music/j.mp3");
+                sound4.play();
+                break;
+                
+
+                case "k":
+                var sound5 = new Audio ("music/k.mp3");
+                sound5.play();
+                break;
+                
+                
+                case "l":
+                var sound6 = new Audio ("music/l.mp3");
+                sound6.play();
+                break;
+                
+
+            default: console.log(key);    
+        }
+    }
+
+
+    function animation(currentKey) {
+        var activeButton = document.querySelector("." + currentKey);
+        activeButton.classList.add("animation");
+        
+        setTimeout(function() {
+            actionButton.classList.remove("animation");
+        }, 100);
+    }
+
+</script>
+
+</body>
+</html>

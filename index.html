@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Digital Drum Kit</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js" integrity="sha512-GWzVrcGlo0TxTRvz9ttioyYJ+Wwk9Ck0G81D+eO63BaqHaJ3YZX9wuqjwgfcV/MrB2PhaVX9DkYVhbFpStnqpQ==" 
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
+    <script src="drumKit.js"></script> 
 </head>
 <body>
     
@@ -23,11 +21,11 @@
     </div>
 
 <script>
-    var numberOfButttons =
-              document.querySelectorAll(".button").length;
+    var numberOfButttons = 
+    document.querySelectorAll(".button").length;
               for(var j = 0; j < numberOfButtons; j++) {
                 document.querySelectorAll(".button")[j]
-                .addEventListener("click", function() {
+                .addEventListener("click", function(){
 
                     var buttonStyle = this.innerHTML;
                     sound(buttonStyle);
@@ -43,51 +41,53 @@
 
     function sound(key) {
         switch (key) {
-            case "w":
-                var sound1 = new Audio("music/w.mp3");
-                sound1.play();
+
+                case "w":
+                var sound2 =new Audio("music2/w.mp3");
+                sound2.play();
                 break;
 
 
                 case "a":
-                var sound2 = new Audio ("music/a.mp3");
+                var sound2 = new Audio ("music3/a.mp3");
                 sound2.play();
                 break;
 
 
                 case "s":
-                var sound3 = new Audio ("music/s.mp3");
+                var sound3 = new Audio ("music1/s.mp3");
                 sound3.play();
                 break;
 
 
                 case "d":
-                var sound3 = new Audio ("music/d.mp3");
+                var sound3 = new Audio ("music2/d.mp3");
                 sound3.play();
                 break;
                 
 
                 case "j":
-                var sound4 = new Audio ("music/j.mp3");
+                var sound4 = new Audio ("music3/j.mp3");
                 sound4.play();
                 break;
                 
 
                 case "k":
-                var sound5 = new Audio ("music/k.mp3");
+                var sound5 = new Audio ("music1/k.mp3");
                 sound5.play();
                 break;
                 
                 
                 case "l":
-                var sound6 = new Audio ("music/l.mp3");
+                var sound6 = new Audio ("music2/l.mp3");
                 sound6.play();
                 break;
                 
 
-            default: console.log(key);    
+            default:console.log(key);    
         }
     }
+
 
 
     function animation(currentKey) {
